@@ -5,7 +5,8 @@ class VenueList extends React.Component {
   state = {};
   render() {
     return (
-      <ol className="venueList">
+      // eslint-disable-next-line
+      <ol className="venueList" role="list">
         {this.props.venues &&
           this.props.venues.map((venue, idx) => (
             <ListItem

@@ -7,6 +7,7 @@ class ListItem extends React.Component {
         className="listItem"
         onClick={() => this.props.handleListItemClick(this.props)}
         tabIndex={1}
+        role="link"
       >
         <img
           src={

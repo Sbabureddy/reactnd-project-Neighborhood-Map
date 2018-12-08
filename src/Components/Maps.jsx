@@ -57,7 +57,7 @@ class Maps extends React.Component {
           {...this.props}
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyArh-KthXEB6B80WJkQTPWMZNCzHtxz-rk"
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `100vh`, width: "68vw" }} />}
+          containerElement={<div style={{ height: `100vh`, width: "50vw" }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>

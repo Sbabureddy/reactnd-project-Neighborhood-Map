@@ -49,7 +49,17 @@ class App extends Component {
     this.handleMarkerClick(marker);
   };
 
+  // Checkign for Google Maps API error
+
+  gm_authFailure() {
+    window.alert("Google Maps error!");
+  }
+
   componentDidMount() {
+    // Calling google maps error checking function
+
+    window.gm_authFailure = () => this.gm_authFailure();
+
     // Getting data from Foursquare API
     LocationsAPI.getVenues()
       .then(result => {
