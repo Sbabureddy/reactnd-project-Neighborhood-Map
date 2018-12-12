@@ -15,3 +15,5 @@
       then visit localhost:5000
   ```
 - Used [FourSquare API](https://developer.foursquare.com/docs/api/venues/details) Data
+
+# Responsive
