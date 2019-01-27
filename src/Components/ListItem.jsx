@@ -4,7 +4,7 @@ class ListItem extends React.Component {
   render() {
     return (
       <li
-
+        className='list-group-item list-group-item-action list-group-item-primary'
         onClick={() => this.props.handleListItemClick(this.props)}
         tabIndex={1}
         role="link"

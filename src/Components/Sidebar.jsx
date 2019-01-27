@@ -39,20 +39,23 @@ class Sidebar extends React.Component {
   };
   render() {
     return (
-      <div >
-        <input
-          type="text"
-          id="search"
-          placeholder="Venues in Tirupati"
-          onChange={this.handleChange}
-          ref={this.textInput}
-          className='col-sm-12 col-md-6 hidden-sm-down'
-        />
+      <div className='mx-auto mt-3'>
+        <div className="form-group ">
+          <input
+            type="text"
+            id="search"
+            placeholder="Venues in Tirupati"
+            onChange={this.handleChange}
+            ref={this.textInput}
+            className='form-control'
+          />
+        </div>
+
         <VenueList
           {...this.props}
           venues={this.handleFilterVenues()}
           handleListItemClick={this.props.handleListItemClick}
-          
+
         />
       </div>
     );
