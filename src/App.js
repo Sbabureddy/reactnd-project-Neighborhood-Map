@@ -86,12 +86,14 @@ class App extends Component {
           <Sidebar
             {...this.state}
             handleListItemClick={this.handleListItemClick}
+            
           />
           <Maps
             {...this.state}
             handleMarkerClick={this.handleMarkerClick}
             role="application"
             aria-hidden="true"
+            
           />
         </ErrorBoundary>
       </div>

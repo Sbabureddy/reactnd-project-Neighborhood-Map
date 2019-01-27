@@ -4,7 +4,7 @@ class ListItem extends React.Component {
   render() {
     return (
       <li
-        className="listItem"
+
         onClick={() => this.props.handleListItemClick(this.props)}
         tabIndex={1}
         role="link"

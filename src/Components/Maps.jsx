@@ -13,7 +13,7 @@ const MyMapComponent = withScriptjs(
       defaultZoom={8}
       zoom={props.zoom}
       defaultCenter={{ lat: 13.6288, lng: 79.4192 }}
-      // center={props.center}
+    // center={props.center}
     >
       {props.markers &&
         props.markers
@@ -52,12 +52,12 @@ const MyMapComponent = withScriptjs(
 class Maps extends React.Component {
   render() {
     return (
-      <div>
+      <div className='col-sm-12 col-md-6'>
         <MyMapComponent
           {...this.props}
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyArh-KthXEB6B80WJkQTPWMZNCzHtxz-rk"
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `100vh`, width: "50vw" }} />}
+          containerElement={<div style={{ height: `100%`, width: '100vw' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
