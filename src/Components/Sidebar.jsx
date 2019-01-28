@@ -39,8 +39,8 @@ class Sidebar extends React.Component {
   };
   render() {
     return (
-      <div className='mx-auto mt-3'>
-        <div className="form-group ">
+      <div className='col-sm-12 col-md-4 mx-auto mt-3'>
+        <div className="input-group mb-3">
           <input
             type="text"
             id="search"
@@ -49,6 +49,9 @@ class Sidebar extends React.Component {
             ref={this.textInput}
             className='form-control'
           />
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
+          </div>
         </div>
 
         <VenueList

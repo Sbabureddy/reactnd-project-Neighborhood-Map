@@ -4,7 +4,7 @@ class ListItem extends React.Component {
   render() {
     return (
       <li
-        className='list-group-item list-group-item-action list-group-item-primary'
+        className='alert alert-dark list-group-item-action overflow-hidden text-truncate align-middle text-justify'
         onClick={() => this.props.handleListItemClick(this.props)}
         tabIndex={1}
         role="link"

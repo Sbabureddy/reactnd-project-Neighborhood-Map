@@ -81,7 +81,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <ErrorBoundary>
           <Sidebar
             {...this.state}
