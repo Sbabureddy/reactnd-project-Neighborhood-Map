@@ -81,20 +81,20 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App container-fluid">
+      <div className="container-fluid">
         <ErrorBoundary>
-          <Sidebar
-            {...this.state}
-            handleListItemClick={this.handleListItemClick}
-            
-          />
-          <Maps
-            {...this.state}
-            handleMarkerClick={this.handleMarkerClick}
-            role="application"
-            aria-hidden="true"
-            
-          />
+          <div className='row mt-4'>
+            <Sidebar
+              {...this.state}
+              handleListItemClick={this.handleListItemClick}
+            />
+            <Maps
+              {...this.state}
+              handleMarkerClick={this.handleMarkerClick}
+              role="application"
+              aria-hidden="true"
+            />
+          </div>
         </ErrorBoundary>
       </div>
     );

@@ -39,7 +39,7 @@ class Sidebar extends React.Component {
   };
   render() {
     return (
-      <div className='col-sm-12 col-md-4 mx-auto mt-3'>
+      <div className='col-sm-12 col-md-4 mx-auto '>
         <div className="input-group mb-3">
           <input
             type="text"
@@ -53,13 +53,13 @@ class Sidebar extends React.Component {
             <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
           </div>
         </div>
-
-        <VenueList
-          {...this.props}
-          venues={this.handleFilterVenues()}
-          handleListItemClick={this.props.handleListItemClick}
-
-        />
+        <div >
+          <VenueList
+            {...this.props}
+            venues={this.handleFilterVenues()}
+            handleListItemClick={this.props.handleListItemClick}
+          />
+        </div>
       </div>
     );
   }

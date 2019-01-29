@@ -52,14 +52,14 @@ const MyMapComponent = withScriptjs(
 class Maps extends React.Component {
   render() {
     return (
-      <div className='col-sm-12 col-md-8 container-fluid'>
-        <MyMapComponent
-          {...this.props}
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyArh-KthXEB6B80WJkQTPWMZNCzHtxz-rk"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `100%`, width: '100%' }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
+      <div className='col-sm-12 col-md-8'>
+          <MyMapComponent
+            {...this.props}
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyArh-KthXEB6B80WJkQTPWMZNCzHtxz-rk"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%`, width: '100%' }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
       </div>
     );
   }
