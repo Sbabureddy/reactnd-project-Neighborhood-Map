@@ -53,12 +53,12 @@ class Sidebar extends React.Component {
             <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
           </div>
         </div>
-        <div >
-          <VenueList
-            {...this.props}
-            venues={this.handleFilterVenues()}
-            handleListItemClick={this.props.handleListItemClick}
-          />
+        <div className="col-sm-12 col-md-12">
+            <VenueList
+              {...this.props}
+              venues={this.handleFilterVenues()}
+              handleListItemClick={this.props.handleListItemClick}
+            />
         </div>
       </div>
     );
