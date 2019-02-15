@@ -4,7 +4,7 @@ const getGeolocation = () => {
       console.log(
         "Latitude: " +
           position.coords.latitude +
-          "<br>Longitude: " +
+          "Longitude: " +
           position.coords.longitude
       );
       this.setState({
