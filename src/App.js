@@ -3,7 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Maps from "./Components/Maps";
 import * as LocationsAPI from "./API/Locations";
-import geoLocation from './Components/GeoLocation';
+import geoLocation from "./Components/GeoLocation";
+import showError from "./Components/GeoLocation";
 import Sidebar from "./Components/Sidebar";
 import ErrorBoundary from "./Components/ErrorBoundary";
 
@@ -84,7 +85,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <ErrorBoundary>
-          <div className='row mt-4'>
+          <div className="row mt-4">
             <Sidebar
               {...this.state}
               handleListItemClick={this.handleListItemClick}
