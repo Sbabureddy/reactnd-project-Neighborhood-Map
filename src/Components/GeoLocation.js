@@ -1,4 +1,4 @@
-const getGeolocation = () => {
+export default  getGeolocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
       console.log(
@@ -17,7 +17,7 @@ const getGeolocation = () => {
   }
 };
 
-const showError = error => {
+export default showError = error => {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       console.log("User denied the request for Geolocation.");

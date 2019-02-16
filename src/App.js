@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Maps from "./Components/Maps";
 import * as LocationsAPI from "./API/Locations";
+import geoLocation from './Components/GeoLocation';
 import Sidebar from "./Components/Sidebar";
 import ErrorBoundary from "./Components/ErrorBoundary";
 
