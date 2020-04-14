@@ -3,8 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import Maps from "./Components/Maps";
 import * as LocationsAPI from "./API/Locations";
-import geoLocation from "./Components/GeoLocation";
-import showError from "./Components/GeoLocation";
 import Sidebar from "./Components/Sidebar";
 import ErrorBoundary from "./Components/ErrorBoundary";
 
@@ -17,15 +15,15 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: 12,
-      updateSuperState: obj => {
+      updateSuperState: (obj) => {
         this.setState({ obj });
-      }
+      },
     };
   }
 
   // Handling marker close
   closeAllMarkers = () => {
-    const markers = this.state.markers.map(marker => {
+    const markers = this.state.markers.map((marker) => {
       marker.isOpen = false;
       return marker;
     });
@@ -33,12 +31,12 @@ class App extends Component {
   };
 
   // Handling marker click
-  handleMarkerClick = marker => {
+  handleMarkerClick = (marker) => {
     this.closeAllMarkers();
     marker.isOpen = true;
     this.setState({ markers: Object.assign(this.state.markers, marker) });
-    const venue = this.state.venues.find(venue => venue.id === marker.id);
-    LocationsAPI.getVenues(marker.id).then(res => {
+    const venue = this.state.venues.find((venue) => venue.id === marker.id);
+    LocationsAPI.getVenues(marker.id).then((res) => {
       const newVenue = Object.assign(venue, res.response.venue);
       this.setState({ venues: Object.assign(this.state.venues, newVenue) });
     });
@@ -46,8 +44,8 @@ class App extends Component {
 
   // Handling ListItem click
 
-  handleListItemClick = venue => {
-    const marker = this.state.markers.find(marker => marker.id === venue.id);
+  handleListItemClick = (venue) => {
+    const marker = this.state.markers.find((marker) => marker.id === venue.id);
     this.handleMarkerClick(marker);
   };
 
@@ -64,22 +62,22 @@ class App extends Component {
 
     // Getting data from Foursquare API
     LocationsAPI.getVenues()
-      .then(result => {
+      .then((result) => {
         const { venues } = result.response;
         const { center } = result.response.geocode.feature.geometry.center;
-        const markers = venues.map(venue => {
+        const markers = venues.map((venue) => {
           return {
             lat: venue.location.lat,
             lng: venue.location.lng,
             isOpen: false,
             isVisible: true,
-            id: venue.id
+            id: venue.id,
           };
         });
 
         this.setState({ venues, center, markers });
       })
-      .catch(err => alert(err));
+      .catch((err) => alert(err));
   }
   render() {
     return (
