@@ -4,23 +4,23 @@ import {
   withGoogleMap,
   GoogleMap,
   Marker,
-  InfoWindow
+  InfoWindow,
 } from "react-google-maps";
 
 const MyMapComponent = withScriptjs(
-  withGoogleMap(props => (
+  withGoogleMap((props) => (
     <GoogleMap
       defaultZoom={8}
       zoom={props.zoom}
       defaultCenter={{ lat: 13.6288, lng: 79.4192 }}
-    // center={props.center}
+      // center={props.center}
     >
       {props.markers &&
         props.markers
-          .filter(marker => marker.isVisible)
+          .filter((marker) => marker.isVisible)
           .map((marker, idx, arr) => {
             const venueInfo = props.venues.find(
-              venue => venue.id === marker.id
+              (venue) => venue.id === marker.id
             );
             return (
               <Marker
@@ -52,14 +52,16 @@ const MyMapComponent = withScriptjs(
 class Maps extends React.Component {
   render() {
     return (
-      <div className='col-sm-12 col-md-8'>
-          <MyMapComponent
-            {...this.props}
-            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyArh-KthXEB6B80WJkQTPWMZNCzHtxz-rk"
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100%`, width: '100%' }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
+      <div className="col-sm-12 col-md-8">
+        <MyMapComponent
+          {...this.props}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${
+            process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+          }`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `100%`, width: "100%" }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
     );
   }
