@@ -5,6 +5,8 @@ import Maps from "./Components/Maps";
 import * as LocationsAPI from "./API/Locations";
 import Sidebar from "./Components/Sidebar";
 import ErrorBoundary from "./Components/ErrorBoundary";
+import Footer from "./Components/FooterComponent";
+import Header from "./Components/HeaderComponent";
 
 class App extends Component {
   constructor(props) {
@@ -82,6 +84,7 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
+        <Header />
         <ErrorBoundary>
           <div className="row mt-4">
             <Sidebar
@@ -96,6 +99,7 @@ class App extends Component {
             />
           </div>
         </ErrorBoundary>
+        <Footer />
       </div>
     );
   }

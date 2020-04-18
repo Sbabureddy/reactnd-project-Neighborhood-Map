@@ -6,14 +6,14 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       query: "",
-      venues: []
+      venues: [],
     };
     this.textInput = React.createRef();
   }
   // filter venues based on search input
   handleFilterVenues = () => {
     if (this.state.query.trim() !== "") {
-      const venues = this.props.venues.filter(venue =>
+      const venues = this.props.venues.filter((venue) =>
         venue.name.toLowerCase().includes(this.state.query.toLowerCase())
       );
       return venues;
@@ -21,13 +21,15 @@ class Sidebar extends React.Component {
     return this.props.venues;
   };
   // controlled input
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ query: e.target.value });
-    const markers = this.props.venues.map(venue => {
+    const markers = this.props.venues.map((venue) => {
       const isMatched = venue.name
         .toLowerCase()
         .includes(e.target.value.toLowerCase());
-      const marker = this.props.markers.find(marker => marker.id === venue.id);
+      const marker = this.props.markers.find(
+        (marker) => marker.id === venue.id
+      );
       if (isMatched) {
         marker.isVisible = true;
       } else {
@@ -39,7 +41,7 @@ class Sidebar extends React.Component {
   };
   render() {
     return (
-      <div className='col-sm-12 col-md-4 mx-auto '>
+      <div className="col-sm-12 col-md-4 mx-auto ">
         <div className="input-group mb-3">
           <input
             type="text"
@@ -47,18 +49,20 @@ class Sidebar extends React.Component {
             placeholder="Venues in Tirupati"
             onChange={this.handleChange}
             ref={this.textInput}
-            className='form-control'
+            className="form-control"
           />
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <i className="fa fa-search" aria-hidden="true" />
+            </div>
           </div>
         </div>
         <div className="col-sm-12 col-md-12 mx-auto">
-            <VenueList
-              {...this.props}
-              venues={this.handleFilterVenues()}
-              handleListItemClick={this.props.handleListItemClick}
-            />
+          <VenueList
+            {...this.props}
+            venues={this.handleFilterVenues()}
+            handleListItemClick={this.props.handleListItemClick}
+          />
         </div>
       </div>
     );
